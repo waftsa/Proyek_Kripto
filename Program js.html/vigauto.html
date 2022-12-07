@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="StyleSheet" href="VigenereAutokeyStyle.css">
+        <title>Kalkulator Kriptografi</title>
+    </head>
+    <body>  
+        <div class="bg"></div>
+            <div class="container">
+                <div class="title">
+                    Kalkulator Vigenere-Autokey Cipher
+                </div>
+                <!-- <form> -->
+                    <div class="input-text">
+                        <div class="input">
+                            <label for="detail">Text</label>
+                            <input class="form" type="text" placeholder="Masukkan Plaintext/Ciphertext" id="text">
+                        </div>
+                        <div class="input">
+                            <label for="detail">Key</label> 
+                            <input class="form" type="text" placeholder="Masukkan Key" id="key">
+                        </div>
+                        <br>
+                        <div class="EnkripDekrip">
+                            <div class="tombol">
+                                <button onclick="encode()" type="submit" class="tombol" >Enkripsi</button>
+                            </div>
+                            <div class="tombol">
+                                <button onclick="decode()" type="submit" class="tombol" >Dekripsi</button>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="input">
+                            <label for="detail">Hasil</label> 
+                            <input class="form" type="text" placeholder="Hasil" id="hasil">
+                        </div>
+    
+                        <br>
+                        
+                        <div class="footer">
+                            <form action="homepage.html">
+                            <div class="exit">
+                                <button type="submit" class="tombol">Exit</button>
+                            </div>
+                            </form>
+                            
+                            <form>
+                            <div class="reset">
+                                <button type="reset" class="tombol" >Reset</button>
+                            </div>
+                            </form>
+                        </div>
+                    <!-- </form>            -->
+                </div>
+
+            <script>
+                var text = document.getElementsById("text").value;  
+                var key = document.getElementsById("key").value;
+                // var opsi = document.getElementsById("cipher").value;
+
+                function encode(){
+                    
+                    if(document.getElementById("cipher").value == "autokey"){
+                        // document.getElementsByid("hasil").value = enAutokey(text, key);
+                        document.getElementsById("hasil").value = "function belum selesai";
+
+                    }else if(document.getElementById("cipher").value == "vigener"){
+                        var k = generateKey(text, key);
+                        document.getElementsById("hasil").value = e(teenVigenerxt, k);
+                    }else if(opsi === "autokeyVigenere"){
+                        document.getElementsByid("hasil").value = enAutokeyVigenere(text, key);
+                    }else if(opsi === "vigenereAutokey"){
+                        document.getElementsByid("hasil").value = enVigenereAutokey(text, key);
+                    }
+                    
+                }
+
+                function decode(){
+                    if(opsi === 'autokey'){
+                        document.getElementsByid("Hasil") = deAutokey(text, key);
+                        document.getElementsByid("Hasil") = deAutokey(text, key);
+
+                    }if(opsi === "vigener"){
+                        let k = generateKey(text, key);
+                        document.getElementsById("Hasil").value = deVigenere(text, k);
+                        
+                    }if(opsi === "autokeyVigenere"){
+                        document.getElementsByid("Hasil") = deAutokeyVigenere(text, key);
+                        
+                    }if(opsi === "vigenereAutokey"){
+                        document.getElementsByid("Hasil") = deVigenereAutokey(text, key);
+                        
+                    }
+
+                    
+                }
+
+                function enAutokey(text, key){
+
+                }
+                function deAutokey(text, key){
+
+                }
+
+                // proses vigenere cipher
+                function generateKey(text, key){
+                    key = key.split("");
+                    if(text.lenght == key.lenght){
+                        return key.join("");
+                    }else{
+                        let temp = key.lenght;
+                        for(let i = 0; i < (text.lenght-temp); i++){
+                            key.push(key[i % ((key).lenght)])
+                        }
+                    }
+                    return key.join("");
+                }
+                    //encode vigenere cipher
+                function enVigenere(text, key){
+                    let ct = "";
+
+                    for(let i = 0; i <  text.lenght; i++){
+                        let x = (text[i].charCodeAt(0) + key[i],charCodeAt(0)) %26;
+                        x += 'A'.charCodeAt(0);
+
+                        ct += String.fromCharCode(x);
+                    }
+                    return ct;
+                }
+                    //decode vigenere cipher
+                function deVigenere(text, key){
+                    let pt = "";
+
+                    for(let i = 0; i < text.lenght; i++){
+                        let x = (text[i].charCodeAt(0) - key[i].charCodeAt(0) + 26) %26;
+
+                        x += 'A'.charCodeAt(0);
+                        pt += String.fromCharCode(x);
+                    }
+                    return pt;
+                }
+
+                function enAutokeyVigenere(text, key){
+
+                }
+                function deAutokeyVigenere(text, key){
+
+                }
+                function enVigenereAutokey(text, key){
+
+                }
+                function deVigenereAutokey(text, key){
+
+                }
+            
+            </script>
+    </body>
+</html>

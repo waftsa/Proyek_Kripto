@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="StyleSheet" href="VigenereAutokeyStyle.css">
+        <title>Kalkulator Kriptografi</title>
+    </head>
+    <body>  
+        <div class="bg"></div>
+            <div class="container">
+                <div class="title">
+                    Kalkulator Vigenere Chiper 
+                </div>
+                <form>
+                    <div class="input-text">
+                        <div class="input">
+                            <label for="detail">Text</label>
+                            <input class="form" type="text" placeholder="Masukkan Plaintext/Ciphertext" id="text">
+                        </div>
+                        <div class="input">
+                            <label for="detail">Key</label> 
+                            <input class="form" type="text" placeholder="Masukkan Key" id="key">
+                        </div>
+                        <br>
+                        <div class="EnkripDekrip">
+                            <div class="tombol">
+                                <button onclick="changeCipherMode('Encrypt Mode')" type="button" class="tombol">Enkripsi</button>
+                            </div>
+                            <div class="tombol">
+                                <button onclick="changeCipherMode('Decrypt Mode')" type="button" class="tombol">Dekripsi</button>
+                            </div>
+                        </div>
+                        <br><br>
+                        <label id="cipherMode"> Encrypt Mode</label>
+                        <div class="input">
+                            <label for="detail">Hasil</label> 
+                            <input class="form" type="text" placeholder="Hasil" id="hasil" disabled>
+                        </div>
+                    </form>
+                        <br>
+                        <div class="footer">
+                            <form action="homepage.html">
+                            <div class="exit">
+                                <button type="submit" class="tombol">Exit</button>
+                            </div>
+                            </form>
+                            <div class="reset">
+                                <button type="reset" class="tombol">Reset</button>
+                            </div>
+                        </div>
+                    <!-- </form>            -->
+                </div>
+
+            <script src="vigenere.js">
+            </script>
+    </body>
+</html>

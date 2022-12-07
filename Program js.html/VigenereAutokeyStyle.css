@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    height: 100vh;
+    background-image: linear-gradient(135deg, rgb(135, 253, 143), rgb(130, 251, 255), rgb(255, 200, 98));
+    /* background-color: #ffffff; */
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #ffffff;
+}
+
+body .container .title{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+label{
+    font-weight: bold;
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    /* align-items: ; */
+    background-color: #575453;
+    padding: 12px 20px;
+    border-radius: 20px;
+    box-shadow: #575453;
+}
+
+.title{
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+input[type=text] {
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: black;
+}
+
+input[type=text]:focus{
+    background-color: rgba(105, 104, 96, 0.479);
+    color: #ffffff;
+}
+
+input[type=button]{
+    width: 325px;
+    background-color: rgb(73, 72, 68);
+    border: black;
+    padding: 12px 20px;
+    text-decoration: double;
+    color: #ffffff;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+input[type=button]:hover{
+    background-color: rgb(131, 171, 177);
+}
+
+label{
+    font-size: 20px;
+}
+
+select{
+    font-size: 20px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border: black;
+    border-radius: 10px;
+    background-color: rgb(73, 72, 68);
+    color: #ffffff;
+    text-align: center;
+}
+
+select:focus{
+    background-color: rgb(73, 72, 68);
+    color: #ffffff;
+    text-align: center;
+}
+
+body .container .tombol{
+    text-align: center;
+
+}
+
+body .container .EnkripDekrip{
+    text-align: center; 
+    display: flex;
+}
+
+body .container .EnkripDekrip button{
+    width: 325px;
+    background-color: rgb(73, 72, 68);
+    border: black;
+    padding: 12px 20px;
+    text-decoration: double;
+    color: #ffffff;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+body .container .EnkripDekrip button:hover{
+    background-color: rgb(131, 171, 177);
+}
+body .container .footer button{
+    width: 325px;
+    background-color: rgb(73, 72, 68);
+    border: black;
+    padding: 12px 20px;
+    text-decoration: double;
+    color: #ffffff;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+}
+body .container .footer .exit button{
+    width: fit-content;
+    display: block;
+    float: left;
+}
+body .container .footer .exit button:hover{
+    background-color: rgb(177, 131, 131);
+}
+body .container .footer .reset button{
+    width: fit-content;
+    /* display: inline-flex; */
+    float: right;
+}
+body .container .footer .reset button:hover{
+    background-color: rgb(177, 159, 131);
+}
+
+

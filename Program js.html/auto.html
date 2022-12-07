@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="StyleSheet" href="VigenereAutokeyStyle.css">
+        <title>Kalkulator Kriptografi</title>
+    </head>
+    <body>  
+        <div class="bg"></div>
+            <div class="container">
+                <div class="title">
+                    Kalkulator Autokey Chiper 
+                </div>
+                <!-- <form> -->
+                    <div class="input-text">
+                        <div class="input">
+                            <label for="detail">Text</label>
+                            <input class="form" type="text" placeholder="Masukkan Plaintext/Ciphertext" id="text"/>
+                        </div>
+                        <div class="input">
+                            <label for="detail">Key</label> 
+                            <input class="form" type="text" placeholder="Masukkan Key" id="key"/>
+                        </div>
+                        <br>
+                        <div class="EnkripDekrip">
+                            <div class="tombol">
+                                <input type="button" class="tombol" name="encrypt" onclick="encrypt()" value="Ekripsi"/>
+                            </div>
+                            <div class="tombol">
+                                <input type="button" class="tombol" name="decrypt" onclick="decrypt()" value="Dekripsi"/>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="input">
+                            <label for="detail">Hasil</label> 
+                            <input class="form" type="text" placeholder="Hasil" id="hasil" disabled value=""/>
+                        </div>
+                    <!-- </form> -->
+
+                        <br>
+                        <div class="footer">
+                            <form action="homepage.html">
+                            <div class="exit">
+                                <button type="submit" class="tombol">Exit</button>
+                            </div>
+                            
+                            <div class="reset">
+                                <button type="reset" class="tombol">Reset</button>
+                            </div>
+                            </form>
+                        </div>
+                </div>
+
+            <script>
+            const toAlpha = (num) => {
+                if(num < 1 || num > 26 || typeof num !== 'number'){
+                    return -1;
+                }
+                const leveller = 65;
+                return String.fromCharCode(num + leveller);
+            };
+
+            function encrypt(){
+                var text = document.getElementById("text").value.toUpperCase();
+                var key = document.getElementById("key").value.toUpperCase();
+                var result="";
+                if(text.length != key.length){
+                    result = "Error";
+                }else{
+                    for(let i=0;i<text.length;i++){
+                    result += toAlpha((text.charCodeAt(i)+ key.charCodeAt(i)) % 26);
+                }
+                }
+                
+                document.getElementById("hasil").value = result;
+            }
+
+            function decrypt(){
+                var text = document.getElementById("text").value.toUpperCase()
+                var key = document.getElementById("key").value.toUpperCase()
+                var result="";
+                if(text.length != key.length){
+                    result = "Error"
+                }else{
+                    for(let i=0;i<text.length;i++){
+                        result += toAlpha((text.charCodeAt(i)- key.charCodeAt(i)) % 26)
+                    }
+                }
+                document.getElementById("hasil").value = result
+            }
+        </script>
+    </body>
+</html>
